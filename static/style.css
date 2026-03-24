@@ -106,8 +106,8 @@ section.show {
 }
 
 .about img {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
@@ -253,4 +253,10 @@ button {
 
 .cert-card:hover {
     transform: translateY(-5px);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }

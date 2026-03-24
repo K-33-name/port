@@ -2,19 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 nav {
     position: fixed;
     width: 100%;
-    background: #111;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
     color: white;
     display: flex;
     justify-content: space-between;
     padding: 15px 40px;
     top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -23,30 +26,37 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f2fe;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .subtitle {
     margin: 10px 0;
+    font-size: 20px;
 }
 
 .quote {
@@ -55,16 +65,35 @@ nav a {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: white;
     color: black;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+/* SECTION ANIMATION */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ABOUT */
 .about {
-    padding: 80px 20px;
+    padding: 100px 20px;
+    background: #f9fafc;
 }
 
 .about-container {
@@ -80,81 +109,141 @@ nav a {
 
 /* SKILLS */
 .skills {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .skill {
     width: 60%;
-    margin: 15px auto;
+    margin: 20px auto;
     text-align: left;
 }
 
 .bar {
     background: #ddd;
     height: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .fill {
     height: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.html { width: 90%; background: orange; }
-.css { width: 85%; background: blue; }
-.js { width: 75%; background: gold; }
-.python { width: 80%; background: purple; }
+.html { width: 90%; background: #ff7a18; }
+.css { width: 85%; background: #007cf0; }
+.js { width: 75%; background: #f7971e; }
+.python { width: 80%; background: #6a11cb; }
 
 /* PROJECTS */
 .projects {
-    padding: 80px 20px;
+    padding: 100px 20px;
+    background: #f9fafc;
     text-align: center;
 }
 
 .project-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .card {
-    background: #f4f4f4;
-    padding: 20px;
-    width: 200px;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    width: 220px;
+    border-radius: 15px;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
 /* CONTACT */
 .contact {
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
 
 .contact-container {
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 form input, form textarea {
     display: block;
     margin: 10px 0;
-    padding: 10px;
-    width: 250px;
+    padding: 12px;
+    width: 260px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     background: black;
     color: white;
     border: none;
+    border-radius: 5px;
 }
 
-.info {
-    margin-top: 20px;
+/* MOBILE */
+@media (max-width: 768px) {
+    .about-container,
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill {
+        width: 90%;
+    }
+}
+/* CERTIFICATES */
+.certificates {
+    padding: 100px 20px;
+    text-align: center;
+    background: #f9fafc;
+}
+
+.cert-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cert-category {
+    width: 250px;
+}
+
+.cert-category h3 {
+    margin-bottom: 15px;
+}
+
+.cert-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cert-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cert-card p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
 }

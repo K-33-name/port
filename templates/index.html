@@ -3,6 +3,7 @@
 <head>
     <title>My Portfolio</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,13 +16,14 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#certificates">Certificates</a></li>
     </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero" class="hero">
     <div class="hero-content">
-        <h1>Hi, I'm  Krishnapriya M P</h1>
+        <h1>Krishnapriya M P</h1>
         <p class="subtitle">web developer</p>
         <p class="quote">"Design is intelligence made visible."</p>
         <a href="#projects" class="btn">View Projects</a>
@@ -89,6 +91,79 @@
     </div>
 </section>
 
+<!-- CERTIFICATES -->
+<section id="certificates" class="certificates">
+    <h2>Certificates</h2>
+
+    <div class="cert-grid">
+
+        <!-- Web Technologies -->
+        <div class="cert-category">
+            <h3>Web Technologies</h3>
+
+            <div class="cert-card">
+                <a href="/static/hcert.jpg" target="_blank">
+                    <img src="/static/hcert.jpg">
+                </a>
+                <p>HTML</p>
+            </div>
+
+            <div class="cert-card">
+                <a href="/static/ccert.jpg" target="_blank">
+                    <img src="/static/ccert.jpg">
+                </a>
+                <p>CSS</p>
+            </div>
+
+            <div class="cert-card">
+                <a href="/static/jcert.jpg" target="_blank">
+                    <img src="/static/jcert.jpg">
+                </a>
+                <p>JavaScript</p>
+            </div>
+
+            <div class="cert-card">
+                <a href="/static/fcert.jpg" target="_blank">
+                    <img src="/static/fcert.jpg">
+                </a>
+                <p>Frontend Development</p>
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="cert-category">
+            <h3>Backend & Database</h3>
+
+            <div class="cert-card">
+                <a href="/static/mcert1.jpg" target="_blank">
+                    <img src="/static/mcert1.jpg">
+                </a>
+                <p>MongoDB</p>
+            </div>
+
+            <div class="cert-card">
+                <a href="/static/ncer.jpg" target="_blank">
+                    <img src="/static/ncert.jpg">
+                </a>
+                <p>Node.js</p>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="cert-category">
+            <h3>Tools & Platforms</h3>
+
+            <div class="cert-card">
+                <a href="/static/gcert.jpg" target="_blank">
+                    <img src="/static/gcert.jpg">
+                </a>
+                <p>GitHub</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
     <h2>Contact Me</h2>
@@ -108,6 +183,31 @@
         </div>
     </div>
 </section>
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+
+    // Fade-in animation on scroll
+    const elements = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const screen = window.innerHeight;
+
+            if (position < screen - 100) {
+                el.classList.add("show");
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

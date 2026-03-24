@@ -106,8 +106,8 @@ section.show {
 }
 
 .about img {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;

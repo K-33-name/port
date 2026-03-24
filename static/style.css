@@ -106,8 +106,8 @@ section.show {
 }
 
 .about img {
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
@@ -209,6 +209,10 @@ button {
     .skill {
         width: 90%;
     }
+    .about img {
+    width: 180px;
+    height: 180px;
+}
 }
 /* CERTIFICATES */
 .certificates {

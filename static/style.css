@@ -215,18 +215,32 @@ button {
 }
 
 nav {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
     }
 
     nav ul {
-        flex-direction: column;
-        margin-top: 10px;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 5px 8px;
     }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    nav {
+    height: auto;   /* prevents full screen stretch */
+}
 }
 /* CERTIFICATES */
 .certificates {

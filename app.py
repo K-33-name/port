@@ -40,6 +40,19 @@ def contact():
 
     return redirect("/")
 
+@app.route("/messages")
+def show_messages():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM messages")
+    data = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template("messages.html", messages=data)
+
 # ✅ Create Table Automatically
 def init_db():
     conn = get_db_connection()

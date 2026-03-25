@@ -56,7 +56,7 @@ def init_db():
 
     conn.commit()
     cursor.close()
-    conn.close()
+    conn.close() #update
 
 # ✅ Run App
 if __name__ == "__main__":
